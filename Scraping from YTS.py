@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 
 driver = webdriver.Chrome(executable_path='C:\\Users\Hassan Nawaz\\Downloads\\Compressed\\chromedriver_win32\\chromedriver.exe')
-basic = 'https://yts.mx/browse-movies/0/all/all/0/featured/0/all'
+basic ='https://yts.mx/browse-movies/0/all/all/0/featured/0/all'
 nextt = '?page=0'
 array = []
 for i in range(1, 2):

@@ -1,0 +1,5 @@
+SetTable was private
+'utf-8' codec can't decode bytes in position 15-16: invalid continuation byte
+Error in Release Year with Format such as (2012-2003), 2014- II 2005 TV Show.
+Python has Stopped Working
+while saving csv file i need first row empty  

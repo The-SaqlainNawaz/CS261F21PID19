@@ -8,25 +8,35 @@ def Search_StartWith(arr,item,col):
         k=0
         flag=False
         count=0
-        for j in range(entit_size):
-            while(k!=len(item)):
-                if(arr[i][col][j]==item[k]):
-                    count+=1
-                    k+=1
-                    j=j+1
-                    if(count==len(item)):
-                        flag = True
-                elif(arr[i][col][j]!=item[k]):
-                    k+=1
-                    j+=1
-                else:
-                    print()
-                        
-            if(flag==True):
-               newArr.append(arr[i])
-               break
-            elif(flag==False):
-                break
+        #print(arr[i][col])
+        if(entit_size<len(item)):
+            i+=1
+        else:    
+            for j in range(entit_size):
+                #print("in j loop")
+                while(k!=len(item)):
+                    #print("in k loop")
+                    if(arr[i][col][j]==item[k]):
+                        count+=1
+                        k+=1
+                        j=j+1
+                        #print("k is "+str(k))
+                        #print("j is "+str(j))
+                        #print(count)
+                        if(count==len(item)):
+                            flag = True
+                    elif(arr[i][col][j]!=item[k]):
+                        k+=1
+                        j+=1
+                    else:
+                        print()
+                            
+                if(flag==True):
+                    print("going to add")
+                    newArr.append(arr[i])
+                    break
+                elif(flag==False):
+                    break
     return newArr
 
 def End_Search(arr,item,col):
@@ -74,8 +84,9 @@ def Simple_Search(arr,item,col):
             new_lit.append(arr[i])
     return new_lit        
 
-# df = pd.read_csv("MoviesScrapped.csv")
+# df = pd.read_csv("MoviesScraped.csv")
 # movie=[]
 # movie = df.values.tolist()
-# kl = Simple_Search(movie,"Dune",0)
+# print(movie[0])
+# kl = Search_StartWith(movie,"Dun",0)
 # print(kl)

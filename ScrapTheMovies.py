@@ -17,7 +17,7 @@ import pandas as pd
 import threading
 import csv
 from datetime import datetime
-#import Sorting as algo
+import Sorting as algo
 
 pause = False
 p_count = 0
@@ -33,26 +33,41 @@ class Ui(QtWidgets.QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.ui.closebutton.clicked.connect(lambda: self.close())
         self.ui.pushButton_4.clicked.connect(lambda: self.showMinimized())
+        self.Main_list=[]
+
+        #################################################################################
+        ############################### List of Objects of classes in Sorting ###########
+        #################################################################################
+        self.Sortingg =[algo.Selection_Sort(),algo.Insertion_Sort(),algo.Quick_Sort(),algo.Merge_Sort(),algo.Bubble_Sort(),algo.Hybrid_Sort(),algo.CockTail_Sort()]
+
+
+        #################################### initally scrp movie list is disabbled #############
+        self.ui.scrap_btn.setEnabled(False)
+        ########################################################################################
         self.show()
-        
         self.ui.pushButton.setEnabled(False)
+        
 
         # Call to import file
         self.ui.pushButton_2.clicked.connect(self.exportfile)
+        self.ui.pushButton_2.clicked.connect(self.Form2DImp)
 
         #Call for start Scrapping
+        ##############################################################
+        #################### Connecting the functions################
+        #############################################################
         self.ui.startbutton.clicked.connect(self.start_Scrap)
         self.ui.startbutton_2.clicked.connect(self.Pause_Scrap)
         self.ui.startbutton_3.clicked.connect(self.Stop_Scarp)
         self.ui.startbutton_3.clicked.connect(self.Enable)
         self.ui.pushButton.clicked.connect(self.Save_file)
-        # try to make 2d array of csv file 
-        try:
-            df = pd.read_csv("MoviesScrapped.csv")
-            movies=[]
-            movies = df.values.tolist()
-        except:
-            print("plz first import file..")    
+        # Connect for maiking 2d array from scrap method
+        self.ui.scrap_btn.clicked.connect(self.Form2DArr)
+        # Connect Sort button with Sort
+        self.ui.pushButton_3.clicked.connect(self.Sort)
+        
+        
+
 
        # self.close()
     def Enable(self):
@@ -224,6 +239,7 @@ class Ui(QtWidgets.QMainWindow):
         #print(time)
         self.ui.lineEdit_3.setText(str(time))
         self.ui.lineEdit_4.setText(str(number*50))
+        self.ui.pushButton.setEnabled(True)
       #  movie_list = pd.DataFrame({ "Movie Name": movie_title,"Duration":movie_duration,"Year of Release" : year, "Gnere": genre,"Movie Rating": rating, "Direcror": director, "Cast" : cast, "Description": synop})
       #  movie_list.to_csv("scrapData01.csv")
     
@@ -260,16 +276,65 @@ class Ui(QtWidgets.QMainWindow):
             movie_list.append(self.ui.tableWidget.item(i,6).text())
             movie_list.append(self.ui.tableWidget.item(i,7).text())
             with open("MoviesScrapped.csv",'a+',encoding="utf-8",newline='')as file:
-                with open("MoviesScrapped.csv", "r",encoding="utf-8") as fileInput:
-                  data = list(csv.reader(fileInput))
-                  if(len(data)==0):
-                    lst=[]
-                    for j in range(8):
-                        lst.append(" ")
-                    ok = csv.writer(file)
-                    ok.writerow(lst)     
+    
                 myfile = csv.writer(file)
                 myfile.writerow(movie_list)
+                self.ui.scrap_btn.setEnabled(True)
+
+    def Form2DArr(self):
+        name = "MoviesScrapped.csv"
+        self.Main_list=algo.fromScrapList(name)
+        self.ui.pushButton_2.setEnabled(False)
+
+    
+    def Form2DImp(self):
+        file_name = self.ui.lineEdit_2.text()
+        file_name = file_name + ".csv"
+        self.Main_list=algo.fromImport(file_name)
+        self.ui.scrap_btn.setEnabled(False)
+    
+
+    def Sort(self):
+        if(self.ui.Ascend.isChecked()):
+            al = self.ui.comboBox.currentIndex()
+            col = self.ui.comboBox_2.currentIndex()
+            if(al == 0 or al==1 or al == 4):
+                self.Main_list=self.Sortingg[al].Asc(self.Main_list,col)
+                self.PrintInTable()
+            elif( al==2 or al==3 or al==5 or al==6):
+                size=len(self.Main_list)
+                if(al==3):
+                    self.Sortingg[al].Asc(self.Main_list,0,size,col)
+                    self.PrintInTable()
+                else:
+                    self.Sortingg[al].Asc(self.Main_list,0,size-1,col)
+                    self.PrintInTable()    
+            #elif(al==2):
+            #    algo.Quick_Asc(self.Main_list,0,len(self.Main_list)-1,col)
+            #    self.PrintInTable()    
+            else:
+                self.Main_list=algo.Tree_Sort_Asc(self.Main_list,col)
+                self.PrintInTable()                
+
+
+    ################### To Print Data in table through list after sorting#############
+    ##################################################################################3
+    def InTable(self):
+        thread=threading.Thread(target=self.PrintInTable)
+        thread.start()
+    def PrintInTable(self):
+        row =0
+        self.ui.tableWidget.setRowCount(len(self.Main_list))
+        for i in self.Main_list:
+            self.ui.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem(i[0]))
+            self.ui.tableWidget.setItem(row,1,QtWidgets.QTableWidgetItem(str(i[1])+" min"))
+            self.ui.tableWidget.setItem(row,2,QtWidgets.QTableWidgetItem(i[2]))
+            self.ui.tableWidget.setItem(row,3,QtWidgets.QTableWidgetItem(i[3]))
+            self.ui.tableWidget.setItem(row,4,QtWidgets.QTableWidgetItem(i[4]))
+            self.ui.tableWidget.setItem(row,5,QtWidgets.QTableWidgetItem(i[5]))
+            self.ui.tableWidget.setItem(row,6,QtWidgets.QTableWidgetItem(i[6]))
+            self.ui.tableWidget.setItem(row,7,QtWidgets.QTableWidgetItem(i[7]))
+            row+=1
 
     
 

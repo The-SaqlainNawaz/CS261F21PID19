@@ -18,6 +18,7 @@ import threading
 import csv
 from datetime import datetime
 import Sorting as algo
+import Searching as Search
 
 pause = False
 p_count = 0
@@ -50,6 +51,7 @@ class Ui(QtWidgets.QMainWindow):
 
         # Call to import file
         self.ui.pushButton_2.clicked.connect(self.exportfile)
+        sleep(1)
         self.ui.pushButton_2.clicked.connect(self.Form2DImp)
 
         #Call for start Scrapping
@@ -65,6 +67,8 @@ class Ui(QtWidgets.QMainWindow):
         self.ui.scrap_btn.clicked.connect(self.Form2DArr)
         # Connect Sort button with Sort
         self.ui.pushButton_3.clicked.connect(self.Sort)
+        # Connect Search Btn 
+        self.ui.startbutton_4.clicked.connect(self.Search_fun)
         
         
 
@@ -80,10 +84,10 @@ class Ui(QtWidgets.QMainWindow):
 
     # Function to impoort csv file from pc into tables
     def export(self):
-        file_name = self.ui.lineEdit_2.text()
-        file_name = file_name + ".csv"
+        file_namee = self.ui.lineEdit_2.text()
+        file_namee = file_namee + ".csv"
         try:
-            with open(file_name, "r",encoding="utf-8") as fileInput:
+            with open(file_namee, "r",encoding="utf-8") as fileInput:
                 roww = 0
                 data = list(csv.reader(fileInput))
                 for row in data:
@@ -264,7 +268,9 @@ class Ui(QtWidgets.QMainWindow):
         stop = True
 
     def Save_file(self):
-        total_row = self.ui.tableWidget.rowCount()                
+        total_row = self.ui.tableWidget.rowCount()  
+        name=self.ui.lineEdit_9.text()
+        name = name + ".csv"              
         for i in range(total_row):
             movie_list=[]
             movie_list.append(self.ui.tableWidget.item(i,0).text())
@@ -275,14 +281,15 @@ class Ui(QtWidgets.QMainWindow):
             movie_list.append(self.ui.tableWidget.item(i,5).text())
             movie_list.append(self.ui.tableWidget.item(i,6).text())
             movie_list.append(self.ui.tableWidget.item(i,7).text())
-            with open("MoviesScrapped.csv",'a+',encoding="utf-8",newline='')as file:
+            with open(name,'a+',encoding="utf-8",newline='')as file:
     
                 myfile = csv.writer(file)
                 myfile.writerow(movie_list)
                 self.ui.scrap_btn.setEnabled(True)
 
     def Form2DArr(self):
-        name = "MoviesScrapped.csv"
+        name = self.ui.lineEdit_9.text()
+        name = name+".csv"
         self.Main_list=algo.fromScrapList(name)
         self.ui.pushButton_2.setEnabled(False)
 
@@ -295,26 +302,41 @@ class Ui(QtWidgets.QMainWindow):
     
 
     def Sort(self):
+        self.sTime = datetime.now()
         if(self.ui.Ascend.isChecked()):
             al = self.ui.comboBox.currentIndex()
             col = self.ui.comboBox_2.currentIndex()
             if(al == 0 or al==1 or al == 4):
                 self.Main_list=self.Sortingg[al].Asc(self.Main_list,col)
-                self.PrintInTable()
+                self.PrintInTable(self.Main_list)
             elif( al==2 or al==3 or al==5 or al==6):
                 size=len(self.Main_list)
                 if(al==3):
                     self.Sortingg[al].Asc(self.Main_list,0,size,col)
-                    self.PrintInTable()
+                    self.PrintInTable(self.Main_list)
                 else:
                     self.Sortingg[al].Asc(self.Main_list,0,size-1,col)
-                    self.PrintInTable()    
-            #elif(al==2):
-            #    algo.Quick_Asc(self.Main_list,0,len(self.Main_list)-1,col)
-            #    self.PrintInTable()    
+                    self.PrintInTable(self.Main_list)       
             else:
                 self.Main_list=algo.Tree_Sort_Asc(self.Main_list,col)
-                self.PrintInTable()                
+                self.PrintInTable(self.Main_list)
+        else:
+            al = self.ui.comboBox.currentIndex()
+            col = self.ui.comboBox_2.currentIndex()
+            if(al == 0 or al==1 or al == 4):
+                self.Main_list=self.Sortingg[al].Dsc(self.Main_list,col)
+                self.PrintInTable(self.Main_list)
+            elif( al==2 or al==3 or al==5 or al==6):
+                size=len(self.Main_list)
+                if(al==3):
+                    self.Sortingg[al].Dsc(self.Main_list,0,size,col)
+                    self.PrintInTable(self.Main_list)
+                else:
+                    self.Sortingg[al].Dsc(self.Main_list,0,size-1,col)
+                    self.PrintInTable(self.Main_list)       
+            else:
+                self.Main_list=algo.Tree_Sort_Dsc(self.Main_list,col)
+                self.PrintInTable(self.Main_list)                       
 
 
     ################### To Print Data in table through list after sorting#############
@@ -322,10 +344,11 @@ class Ui(QtWidgets.QMainWindow):
     def InTable(self):
         thread=threading.Thread(target=self.PrintInTable)
         thread.start()
-    def PrintInTable(self):
+    def PrintInTable(self,arr):
+       
         row =0
-        self.ui.tableWidget.setRowCount(len(self.Main_list))
-        for i in self.Main_list:
+        self.ui.tableWidget.setRowCount(len(arr))
+        for i in arr:
             self.ui.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem(i[0]))
             self.ui.tableWidget.setItem(row,1,QtWidgets.QTableWidgetItem(str(i[1])+" min"))
             self.ui.tableWidget.setItem(row,2,QtWidgets.QTableWidgetItem(i[2]))
@@ -335,8 +358,37 @@ class Ui(QtWidgets.QMainWindow):
             self.ui.tableWidget.setItem(row,6,QtWidgets.QTableWidgetItem(i[6]))
             self.ui.tableWidget.setItem(row,7,QtWidgets.QTableWidgetItem(i[7]))
             row+=1
+        self.SEndTime = datetime.now()
+        t = self.SEndTime - self.sTime 
+        self.ui.lineEdit_5.setText(str(t))
 
-    
+    ############################ function to Search##############################
+    def Search_fun(self):
+        col=self.ui.comboBox_8.currentIndex()
+        item = self.ui.lineEdit.text()
+        if(self.ui.StartWith1.isChecked()):
+            self.ui.EndWith1.setChecked(False)
+            self.sTime = datetime.now()   
+            lis=Search.Search_StartWith(self.Main_list,item,col)
+            #sleep(1)
+            self.PrintInTable(lis)
+            self.SEndTime = datetime.now()
+            self.ui.lineEdit_8.setText(str(self.SEndTime - self.sTime))
+        elif(self.ui.EndWith1.isChecked()):
+            self.ui.StartWith1.setChecked(False)
+            self.sTime = datetime.now()
+            lis=Search.End_Search(self.Main_list,item,col)
+            #sleep(1)
+            self.PrintInTable(lis)
+            self.SEndTime = datetime.now()
+            self.ui.lineEdit_8.setText(str(self.SEndTime - self.sTime))
+        else:
+            self.sTime = datetime.now()
+            lis=Search.Simple_Search(self.Main_list,item,col)
+            #sleep(1)
+            self.PrintInTable(lis)
+            self.SEndTime = datetime.now()
+            self.ui.lineEdit_8.setText(str(self.SEndTime - self.sTime))        
 
 #self.ui.pushButton.clicked.connect(exportfile())
 app = QtWidgets.QApplication(sys.argv)

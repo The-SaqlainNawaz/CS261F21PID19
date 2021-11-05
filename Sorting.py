@@ -458,7 +458,7 @@ def fromImport(name):
     df = pd.read_csv(name)
     movies_Im=[]
     movies_Im= df.values.tolist()
-    movies_Im = df.values.tolist()
+    #movies_Im = df.values.tolist()
     movies_Im=convert(movies_Im,3)
     movies_Im=convert(movies_Im,1)
     movies_Im=convert(movies_Im,4)

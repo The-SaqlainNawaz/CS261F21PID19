@@ -14,13 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(978, 646)
+        MainWindow.resize(1092, 695)
         MainWindow.setStyleSheet("background-color:rgb(54, 54, 54)")
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(0, 30, 201, 611))
+        self.frame.setGeometry(QtCore.QRect(0, 30, 211, 661))
         self.frame.setStyleSheet("background-color:rgb(56, 56, 56)")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         self.comboBox_3.addItem("")
         self.comboBox_3.addItem("")
         self.progressBar = QtWidgets.QProgressBar(self.frame)
-        self.progressBar.setGeometry(QtCore.QRect(10, 560, 181, 23))
+        self.progressBar.setGeometry(QtCore.QRect(10, 610, 181, 23))
         self.progressBar.setStyleSheet("color:white\n"
 "")
         self.progressBar.setProperty("value", 24)
@@ -84,7 +84,7 @@ class Ui_MainWindow(object):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.line_3 = QtWidgets.QFrame(self.frame)
-        self.line_3.setGeometry(QtCore.QRect(0, 540, 211, 16))
+        self.line_3.setGeometry(QtCore.QRect(0, 580, 211, 16))
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
@@ -112,7 +112,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_3.setObjectName("pushButton_3")
         self.line_7 = QtWidgets.QFrame(self.frame)
-        self.line_7.setGeometry(QtCore.QRect(0, 470, 211, 16))
+        self.line_7.setGeometry(QtCore.QRect(0, 510, 211, 16))
         self.line_7.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_7.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_7.setObjectName("line_7")
@@ -203,10 +203,10 @@ class Ui_MainWindow(object):
         self.label_14.setGeometry(QtCore.QRect(20, 0, 71, 20))
         self.label_14.setObjectName("label_14")
         self.label_5 = QtWidgets.QLabel(self.frame)
-        self.label_5.setGeometry(QtCore.QRect(10, 590, 141, 16))
+        self.label_5.setGeometry(QtCore.QRect(10, 640, 141, 16))
         self.label_5.setObjectName("label_5")
         self.comboBox_5 = QtWidgets.QComboBox(self.frame)
-        self.comboBox_5.setGeometry(QtCore.QRect(30, 510, 151, 22))
+        self.comboBox_5.setGeometry(QtCore.QRect(20, 560, 151, 22))
         self.comboBox_5.setStyleSheet("color:black;\n"
 "background-color:white;")
         self.comboBox_5.setObjectName("comboBox_5")
@@ -215,7 +215,7 @@ class Ui_MainWindow(object):
         self.comboBox_5.addItem("")
         self.comboBox_5.addItem("")
         self.label_16 = QtWidgets.QLabel(self.frame)
-        self.label_16.setGeometry(QtCore.QRect(10, 480, 101, 16))
+        self.label_16.setGeometry(QtCore.QRect(10, 530, 101, 16))
         self.label_16.setObjectName("label_16")
         self.label_15 = QtWidgets.QLabel(self.frame)
         self.label_15.setGeometry(QtCore.QRect(20, 150, 111, 20))
@@ -248,34 +248,39 @@ class Ui_MainWindow(object):
         self.Descend.setGeometry(QtCore.QRect(120, 240, 82, 17))
         self.Descend.setStyleSheet("color: rgb(255, 255, 255);")
         self.Descend.setObjectName("Descend")
+        self.label_18 = QtWidgets.QLabel(self.frame)
+        self.label_18.setGeometry(QtCore.QRect(10, 480, 41, 16))
+        self.label_18.setObjectName("label_18")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_5.setGeometry(QtCore.QRect(50, 480, 101, 23))
+        self.lineEdit_5.setStyleSheet("background-color:white;\n"
+"color:black;\n"
+"")
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.label_12 = QtWidgets.QLabel(self.frame)
+        self.label_12.setGeometry(QtCore.QRect(160, 480, 41, 20))
+        self.label_12.setObjectName("label_12")
         self.line = QtWidgets.QFrame(self.centralwidget)
-        self.line.setGeometry(QtCore.QRect(200, 10, 21, 621))
+        self.line.setGeometry(QtCore.QRect(200, 10, 21, 681))
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.line_4 = QtWidgets.QFrame(self.centralwidget)
-        self.line_4.setGeometry(QtCore.QRect(210, 105, 701, 41))
+        self.line_4.setGeometry(QtCore.QRect(210, 130, 881, 21))
         self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_4.setObjectName("line_4")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(480, 70, 51, 41))
+        self.label_4.setGeometry(QtCore.QRect(480, 10, 51, 21))
         self.label_4.setObjectName("label_4")
-        self.comboBox_4 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_4.setGeometry(QtCore.QRect(700, 80, 71, 22))
-        self.comboBox_4.setStyleSheet("background-color:white;\n"
-"color:black")
-        self.comboBox_4.setObjectName("comboBox_4")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(540, 80, 141, 23))
+        self.lineEdit.setGeometry(QtCore.QRect(480, 50, 161, 23))
         self.lineEdit.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "")
         self.lineEdit.setObjectName("lineEdit")
         self.comboBox_7 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_7.setGeometry(QtCore.QRect(790, 50, 101, 22))
+        self.comboBox_7.setGeometry(QtCore.QRect(700, 20, 111, 22))
         self.comboBox_7.setStyleSheet("color:black;\n"
 "background-color:white;")
         self.comboBox_7.setObjectName("comboBox_7")
@@ -286,8 +291,9 @@ class Ui_MainWindow(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
+        self.comboBox_7.addItem("")
         self.comboBox_8 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_8.setGeometry(QtCore.QRect(790, 80, 101, 22))
+        self.comboBox_8.setGeometry(QtCore.QRect(570, 20, 71, 22))
         self.comboBox_8.setStyleSheet("color:black;\n"
 "background-color:white;")
         self.comboBox_8.setObjectName("comboBox_8")
@@ -298,18 +304,7 @@ class Ui_MainWindow(object):
         self.comboBox_8.addItem("")
         self.comboBox_8.addItem("")
         self.comboBox_8.addItem("")
-        self.checkBox_3 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_3.setGeometry(QtCore.QRect(900, 30, 71, 51))
-        self.checkBox_3.setStyleSheet("color:white")
-        self.checkBox_3.setObjectName("checkBox_3")
-        self.checkBox_4 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_4.setGeometry(QtCore.QRect(900, 60, 70, 31))
-        self.checkBox_4.setStyleSheet("color:white")
-        self.checkBox_4.setObjectName("checkBox_4")
-        self.checkBox_5 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_5.setGeometry(QtCore.QRect(900, 80, 70, 31))
-        self.checkBox_5.setStyleSheet("color:white")
-        self.checkBox_5.setObjectName("checkBox_5")
+        self.comboBox_8.addItem("")
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(250, 10, 181, 16))
         self.label_6.setObjectName("label_6")
@@ -333,7 +328,7 @@ class Ui_MainWindow(object):
         self.line_6.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_6.setObjectName("line_6")
         self.closebutton = QtWidgets.QPushButton(self.centralwidget)
-        self.closebutton.setGeometry(QtCore.QRect(920, 10, 51, 23))
+        self.closebutton.setGeometry(QtCore.QRect(1040, 0, 51, 23))
         self.closebutton.setStyleSheet("QPushButton {\n"
 "   background-color:rgb(255, 255, 255);\n"
 "    border: none;\n"
@@ -350,7 +345,7 @@ class Ui_MainWindow(object):
 "}")
         self.closebutton.setObjectName("closebutton")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(860, 10, 51, 23))
+        self.pushButton_4.setGeometry(QtCore.QRect(990, 0, 51, 23))
         self.pushButton_4.setStyleSheet("QPushButton {\n"
 "   background-color:rgb(255, 255, 255);\n"
 "    border: none;\n"
@@ -368,7 +363,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_4.setObjectName("pushButton_4")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(210, 130, 751, 451))
+        self.tableWidget.setGeometry(QtCore.QRect(260, 160, 801, 451))
         self.tableWidget.setStyleSheet("QTableWidget{\n"
 "\n"
 "background-color: rgb(54, 54, 54);\n"
@@ -398,13 +393,10 @@ class Ui_MainWindow(object):
         self.label_10.setGeometry(QtCore.QRect(20, 10, 121, 16))
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.centralwidget)
-        self.label_11.setGeometry(QtCore.QRect(530, 20, 181, 16))
+        self.label_11.setGeometry(QtCore.QRect(880, 30, 101, 16))
         self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.centralwidget)
-        self.label_12.setGeometry(QtCore.QRect(690, 40, 81, 20))
-        self.label_12.setObjectName("label_12")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(770, 600, 191, 23))
+        self.pushButton.setGeometry(QtCore.QRect(870, 630, 191, 23))
         self.pushButton.setStyleSheet("QPushButton {\n"
 "   background-color:rgb(85, 85, 255);\n"
 "    border: none;\n"
@@ -432,12 +424,93 @@ class Ui_MainWindow(object):
 "color:black;\n"
 "")
         self.lineEdit_4.setObjectName("lineEdit_4")
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_5.setGeometry(QtCore.QRect(540, 40, 141, 23))
-        self.lineEdit_5.setStyleSheet("background-color:white;\n"
+        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton.setGeometry(QtCore.QRect(650, 30, 41, 17))
+        self.radioButton.setStyleSheet("color: rgb(255, 255, 255);")
+        self.radioButton.setObjectName("radioButton")
+        self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_2.setGeometry(QtCore.QRect(650, 70, 41, 17))
+        self.radioButton_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.startbutton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.startbutton_4.setGeometry(QtCore.QRect(490, 100, 141, 23))
+        self.startbutton_4.setStyleSheet("QPushButton {\n"
+"   background-color:rgb(255, 242, 99);\n"
+"    border: none;\n"
+"   color: black;\n"
+"    border-radius:10px;\n"
+"    font:arial;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color:rgb(254, 254, 254);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(68, 68, 68);\n"
+"   color : rgb(121, 111, 255);\n"
+"}")
+        self.startbutton_4.setObjectName("startbutton_4")
+        self.startbutton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.startbutton_5.setGeometry(QtCore.QRect(700, 100, 141, 23))
+        self.startbutton_5.setStyleSheet("QPushButton {\n"
+"   background-color:rgb(255, 242, 99);\n"
+"    border: none;\n"
+"   color: black;\n"
+"    border-radius:10px;\n"
+"    font:arial;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color:rgb(254, 254, 254);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(68, 68, 68);\n"
+"   color : rgb(121, 111, 255);\n"
+"}")
+        self.startbutton_5.setObjectName("startbutton_5")
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_7.setGeometry(QtCore.QRect(700, 50, 151, 23))
+        self.lineEdit_7.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "")
-        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.line_8 = QtWidgets.QFrame(self.centralwidget)
+        self.line_8.setGeometry(QtCore.QRect(850, 0, 21, 131))
+        self.line_8.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_8.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_8.setObjectName("line_8")
+        self.lineEdit_8 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_8.setGeometry(QtCore.QRect(880, 60, 141, 23))
+        self.lineEdit_8.setStyleSheet("background-color:white;\n"
+"color:black;\n"
+"")
+        self.lineEdit_8.setObjectName("lineEdit_8")
+        self.label_19 = QtWidgets.QLabel(self.centralwidget)
+        self.label_19.setGeometry(QtCore.QRect(1030, 60, 41, 20))
+        self.label_19.setObjectName("label_19")
+        self.StartWith1 = QtWidgets.QRadioButton(self.centralwidget)
+        self.StartWith1.setGeometry(QtCore.QRect(480, 80, 71, 17))
+        self.StartWith1.setStyleSheet("color: rgb(255, 255, 255);")
+        self.StartWith1.setObjectName("StartWith1")
+        self.EndWith1 = QtWidgets.QRadioButton(self.centralwidget)
+        self.EndWith1.setGeometry(QtCore.QRect(580, 80, 61, 17))
+        self.EndWith1.setStyleSheet("color: rgb(255, 255, 255);")
+        self.EndWith1.setObjectName("EndWith1")
+        self.StartWith1_2 = QtWidgets.QRadioButton(self.centralwidget)
+        self.StartWith1_2.setGeometry(QtCore.QRect(700, 80, 71, 17))
+        self.StartWith1_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.StartWith1_2.setObjectName("StartWith1_2")
+        self.EndWith1_2 = QtWidgets.QRadioButton(self.centralwidget)
+        self.EndWith1_2.setGeometry(QtCore.QRect(790, 80, 61, 17))
+        self.EndWith1_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.EndWith1_2.setObjectName("EndWith1_2")
+        self.lineEdit_9 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_9.setGeometry(QtCore.QRect(690, 630, 161, 23))
+        self.lineEdit_9.setStyleSheet("background-color:white;\n"
+"color:black;\n"
+"")
+        self.lineEdit_9.setObjectName("lineEdit_9")
+        self.label_20 = QtWidgets.QLabel(self.centralwidget)
+        self.label_20.setGeometry(QtCore.QRect(600, 630, 71, 21))
+        self.label_20.setObjectName("label_20")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -490,26 +563,25 @@ class Ui_MainWindow(object):
         self.scrap_btn.setText(_translate("MainWindow", "Ok"))
         self.Ascend.setText(_translate("MainWindow", "Ascending"))
         self.Descend.setText(_translate("MainWindow", "Descending"))
+        self.label_18.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">Time :</span></p></body></html>"))
+        self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Mints</span></p></body></html>"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Search :</span></p></body></html>"))
-        self.comboBox_4.setItemText(0, _translate("MainWindow", "Start with"))
-        self.comboBox_4.setItemText(1, _translate("MainWindow", "Ends with"))
         self.comboBox_7.setItemText(0, _translate("MainWindow", "Title"))
-        self.comboBox_7.setItemText(1, _translate("MainWindow", "Genre"))
-        self.comboBox_7.setItemText(2, _translate("MainWindow", "Rating"))
-        self.comboBox_7.setItemText(3, _translate("MainWindow", "Year"))
-        self.comboBox_7.setItemText(4, _translate("MainWindow", "Time"))
-        self.comboBox_7.setItemText(5, _translate("MainWindow", "Cast"))
-        self.comboBox_7.setItemText(6, _translate("MainWindow", "Director"))
+        self.comboBox_7.setItemText(1, _translate("MainWindow", "Duration"))
+        self.comboBox_7.setItemText(2, _translate("MainWindow", "Year"))
+        self.comboBox_7.setItemText(3, _translate("MainWindow", "Genre"))
+        self.comboBox_7.setItemText(4, _translate("MainWindow", "Rating"))
+        self.comboBox_7.setItemText(5, _translate("MainWindow", "Director"))
+        self.comboBox_7.setItemText(6, _translate("MainWindow", "Cast"))
+        self.comboBox_7.setItemText(7, _translate("MainWindow", "Synop"))
         self.comboBox_8.setItemText(0, _translate("MainWindow", "Title"))
-        self.comboBox_8.setItemText(1, _translate("MainWindow", "Genre"))
-        self.comboBox_8.setItemText(2, _translate("MainWindow", "Rating"))
-        self.comboBox_8.setItemText(3, _translate("MainWindow", "Year"))
-        self.comboBox_8.setItemText(4, _translate("MainWindow", "Time"))
-        self.comboBox_8.setItemText(5, _translate("MainWindow", "Cast"))
-        self.comboBox_8.setItemText(6, _translate("MainWindow", "Director"))
-        self.checkBox_3.setText(_translate("MainWindow", "AND"))
-        self.checkBox_4.setText(_translate("MainWindow", "OR"))
-        self.checkBox_5.setText(_translate("MainWindow", "NOT"))
+        self.comboBox_8.setItemText(1, _translate("MainWindow", "Duration"))
+        self.comboBox_8.setItemText(2, _translate("MainWindow", "Year"))
+        self.comboBox_8.setItemText(3, _translate("MainWindow", "Genre"))
+        self.comboBox_8.setItemText(4, _translate("MainWindow", "Rating"))
+        self.comboBox_8.setItemText(5, _translate("MainWindow", "Director"))
+        self.comboBox_8.setItemText(6, _translate("MainWindow", "Cast"))
+        self.comboBox_8.setItemText(7, _translate("MainWindow", "Synop"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">Time Taken While Scrapping:</span></p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Mints</span></p></body></html>"))
         self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Movies Scraped :</span></p></body></html>"))
@@ -533,9 +605,18 @@ class Ui_MainWindow(object):
         item = self.tableWidget.horizontalHeaderItem(7)
         item.setText(_translate("MainWindow", "Synoip"))
         self.label_10.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Scrap The Movies</span></p></body></html>"))
-        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#ffffff;\">Time Taken While Searching:</span></p></body></html>"))
-        self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Mints</span></p></body></html>"))
+        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Searching Time</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Save File"))
+        self.radioButton.setText(_translate("MainWindow", "AND"))
+        self.radioButton_2.setText(_translate("MainWindow", "OR"))
+        self.startbutton_4.setText(_translate("MainWindow", "Ok"))
+        self.startbutton_5.setText(_translate("MainWindow", "Search"))
+        self.label_19.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#ffffff;\">Mints</span></p></body></html>"))
+        self.StartWith1.setText(_translate("MainWindow", "Start With"))
+        self.EndWith1.setText(_translate("MainWindow", "End with"))
+        self.StartWith1_2.setText(_translate("MainWindow", "Start With"))
+        self.EndWith1_2.setText(_translate("MainWindow", "End with"))
+        self.label_20.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; color:#ffffff;\">File Name :</span></p></body></html>"))
 
 
 if __name__ == "__main__":

@@ -42,7 +42,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>120</y>
+       <y>130</y>
        <width>71</width>
        <height>21</height>
       </rect>
@@ -255,9 +255,9 @@ background-color:white;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>100</y>
+       <y>110</y>
        <width>211</width>
-       <height>21</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
@@ -574,7 +574,7 @@ background-color:white;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>150</y>
+       <y>160</y>
        <width>111</width>
        <height>20</height>
       </rect>
@@ -586,7 +586,7 @@ background-color:white;</string>
     <widget class="QLabel" name="label_17">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>140</x>
        <y>170</y>
        <width>21</width>
        <height>20</height>
@@ -600,7 +600,7 @@ background-color:white;</string>
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>150</y>
+       <y>160</y>
        <width>41</width>
        <height>23</height>
       </rect>
@@ -716,9 +716,9 @@ color:black;
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>130</y>
+      <y>140</y>
       <width>881</width>
-      <height>21</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="orientation">
@@ -752,60 +752,6 @@ color:black;
 color:black;
 </string>
     </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_7">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>20</y>
-      <width>111</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:black;
-background-color:white;</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>Title</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Duration</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Year</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Genre</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Rating</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Director</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Cast</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Synop</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="comboBox_8">
     <property name="geometry">
@@ -1176,38 +1122,9 @@ color:black;
    <widget class="QPushButton" name="startbutton_4">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>100</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-   background-color:rgb(255, 242, 99);
-    border: none;
-   color: black;
-    border-radius:10px;
-    font:arial;
-}
-QPushButton:hover {
-    background-color:rgb(254, 254, 254);
-}
-QPushButton:pressed {
-    background-color: rgb(68, 68, 68);
-   color : rgb(121, 111, 255);
-}</string>
-    </property>
-    <property name="text">
-     <string>Ok</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="startbutton_5">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>100</y>
-      <width>141</width>
+      <x>480</x>
+      <y>120</y>
+      <width>51</width>
       <height>23</height>
      </rect>
     </property>
@@ -1231,28 +1148,13 @@ QPushButton:pressed {
      <string>Search</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_7">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>50</y>
-      <width>151</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:white;
-color:black;
-</string>
-    </property>
-   </widget>
    <widget class="Line" name="line_8">
     <property name="geometry">
      <rect>
-      <x>850</x>
+      <x>860</x>
       <y>0</y>
-      <width>21</width>
-      <height>131</height>
+      <width>20</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="orientation">
@@ -1319,38 +1221,6 @@ color:black;
      <string>End with</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="StartWith1_2">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>80</y>
-      <width>71</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Start With</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="EndWith1_2">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>80</y>
-      <width>61</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>End with</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEdit_9">
     <property name="geometry">
      <rect>
@@ -1377,6 +1247,74 @@ color:black;
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;File Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>100</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Wanna add filters on other colum as well ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_9">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>0</y>
+      <width>16</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="startbutton_5">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>120</y>
+      <width>51</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   background-color:rgb(255, 242, 99);
+    border: none;
+   color: black;
+    border-radius:10px;
+    font:arial;
+}
+QPushButton:hover {
+    background-color:rgb(254, 254, 254);
+}
+QPushButton:pressed {
+    background-color: rgb(68, 68, 68);
+   color : rgb(121, 111, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Yes</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_22">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>10</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;Filter u choose:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
